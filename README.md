@@ -43,6 +43,12 @@ Run playbook
 $ docker run --rm -it -v $(pwd):/ansible/playbooks druidfi/ansible ansible-playbook ansible/playbook.yml
 ```
 
+Provisioning example on Vagrant using ~/.vagrant.d/insecure_private_key
+
+```
+$ docker run --rm -it -v ~/.vagrant.d/insecure_private_key:/root/.vagrant.d/insecure_private_key -v $(pwd):/ansible/playbooks druidfi/ansible ansible-playbook -i ansible/inventory/development ansible/provision.yml
+```
+
 ## Aliasing
 
 ```
