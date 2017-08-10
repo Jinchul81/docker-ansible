@@ -20,6 +20,11 @@ It's assumed you are using default Druid infra structure where:
 - inventory files are in folder ./ansible/inventory
 - roles are in folder ./ansible/roles 
 
+and that your keys are in:
+
+- private key in ~/.ssh/id_rsa
+- public key in ~/.ssh/id_rsa.pub
+
 Get version
 
 ```
