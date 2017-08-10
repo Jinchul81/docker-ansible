@@ -42,7 +42,8 @@ RUN echo "===> Installing sudo to emulate normal OS behavior..."  && \
     mkdir -p /etc/ansible                        && \
     echo 'localhost' > /etc/ansible/hosts
 
-
+RUN mkdir -p /root/.ssh
+RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 RUN mkdir -p /ansible/playbooks
 WORKDIR /ansible/playbooks
 
