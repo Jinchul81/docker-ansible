@@ -1,6 +1,0 @@
----
-- hosts: all
-  become: yes
-  tasks:
-    - name: Testing playbook
-      debug: msg="Hello from Ansible task"
