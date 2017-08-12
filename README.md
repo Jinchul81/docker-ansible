@@ -4,26 +4,9 @@ Dockerized Ansible commands
 
 ## Requirements
 
+- Your SSH keys in place!
 - Docker
 - Make (on OSX you need Xcode developer tools to get this)
-
-## Build the image
-
-```
-$ make build
-```
-
-or
-
-```
-$ docker build -t druidfi/ansible .
-```
-
-## Publish to Docker Hub (needs login to druidfi account)
-
-```
-$ make push
-```
 
 ## Add aliases
 
@@ -90,4 +73,22 @@ ansible-galaxy
 
 ```
 $ alias ansible-galaxy='docker run --rm -it -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa:ro -v $(pwd):/ansible/playbooks druidfi/ansible ansible-galaxy'
+```
+
+## Build the image
+
+```
+$ make build
+```
+
+or
+
+```
+$ docker build -t druidfi/ansible .
+```
+
+## Publish to Docker Hub (needs login to druidfi account)
+
+```
+$ make push
 ```
