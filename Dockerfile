@@ -1,50 +1,22 @@
-# Dockerfile for building Ansible image for Alpine 3, with as few additional software as possible.
-#
-# @see https://github.com/gliderlabs/docker-alpine/blob/master/docs/usage.md
-#
-# Version  1.0
-#
-
-
-# pull base image
-FROM alpine:3.4
+FROM alpine:latest
 
 MAINTAINER Marko Korhonen <marko.korhonen@druid.fi>
 
-
-RUN echo "===> Installing sudo to emulate normal OS behavior..."  && \
-    apk --update add sudo                                         && \
-    \
-    \
-    echo "Install Git..." && \
-    apk add --no-cache bash git openssh && \
-    echo "===> Adding Python runtime..."  && \
-    apk --update add python py-pip openssl ca-certificates    && \
-    apk --update add --virtual build-dependencies \
-                python-dev libffi-dev openssl-dev build-base  && \
-    pip install --upgrade pip cffi                            && \
-    \
-    \
-    echo "===> Installing Ansible..."  && \
-    pip install ansible                && \
-    \
-    \
-    echo "===> Installing handy tools (not absolutely required)..."  && \
-    apk --update add sshpass openssh-client rsync  && \
-    \
-    \
-    echo "===> Removing package list..."  && \
-    apk del build-dependencies            && \
-    rm -rf /var/cache/apk/*               && \
-    \
-    \
-    echo "===> Adding hosts for convenience..."  && \
-    mkdir -p /etc/ansible                        && \
-    echo 'localhost' > /etc/ansible/hosts
-
+RUN apk --update add sudo
+RUN apk add --no-cache bash git openssh
+RUN apk --update add python py-pip openssl ca-certificates
+RUN apk --update add --virtual build-dependencies python-dev libffi-dev openssl-dev build-base
+RUN pip install --upgrade pip cffi
+RUN pip install ansible
+RUN apk --update add sshpass openssh-client rsync
+RUN apk del build-dependencies
+RUN rm -rf /var/cache/apk/*
+RUN mkdir -p /etc/ansible
+RUN echo 'localhost' > /etc/ansible/hosts
 RUN mkdir -p /root/.ssh
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 RUN mkdir -p /ansible/playbooks
+
 WORKDIR /ansible/playbooks
 
 ENV ANSIBLE_GATHERING smart
