@@ -46,13 +46,13 @@ $ docker run --rm -it druidfi/ansible ansible --version
 ### Install roles
 
 ```
-$ docker run --rm -it -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa:ro -v $(pwd):/ansible/playbooks druidfi/ansible ansible-galaxy install -r ansible/requirements.yml -p ansible/roles
+$ docker run --rm -it -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa:ro -v $(pwd):/ansible/playbooks druidfi/docker-ansible ansible-galaxy install -r ansible/requirements.yml -p ansible/roles
 ```
 
 ### Run playbook
 
 ```
-$ docker run --rm -it -v $(pwd):/ansible/playbooks druidfi/ansible ansible-playbook ansible/playbook.yml
+$ docker run --rm -it -v $(pwd):/ansible/playbooks druidfi/docker-ansible ansible-playbook ansible/playbook.yml
 ```
 
 ## Aliasing
@@ -60,19 +60,19 @@ $ docker run --rm -it -v $(pwd):/ansible/playbooks druidfi/ansible ansible-playb
 ### ansible
 
 ```
-$ alias ansible='docker run --rm -it -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa:ro -v $(pwd):/ansible/playbooks druidfi/ansible ansible'
+$ alias ansible='docker run --rm -it -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa:ro -v $(pwd):/ansible/playbooks druidfi/docker-ansible ansible'
 ```
 
 ### ansible-playbook
 
 ```
-$ alias ansible-playbook='docker run --rm -it -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa:ro -v ${HOME}/.vagrant.d/insecure_private_key:/root/.vagrant.d/insecure_private_key:ro -v $(pwd):/ansible/playbooks druidfi/ansible ansible-playbook'
+$ alias ansible-playbook='docker run --rm -it -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa:ro -v ${HOME}/.vagrant.d/insecure_private_key:/root/.vagrant.d/insecure_private_key:ro -v $(pwd):/ansible/playbooks druidfi/docker-ansible ansible-playbook'
 ```
 
 ### ansible-galaxy
 
 ```
-$ alias ansible-galaxy='docker run --rm -it -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa:ro -v $(pwd):/ansible/playbooks druidfi/ansible ansible-galaxy'
+$ alias ansible-galaxy='docker run --rm -it -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa:ro -v $(pwd):/ansible/playbooks druidfi/docker-ansible ansible-galaxy'
 ```
 
 ## Build the image
