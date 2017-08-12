@@ -5,12 +5,33 @@ Dockerized Ansible commands
 ## Requirements
 
 - Docker
+- Make
 
 ## Build the image
 
 ```
+$ make build
+```
+
+or
+
+```
 $ docker build -t druidfi/ansible .
 ```
+
+## Publish to Docker Hub (needs login to druidfi account)
+
+```
+$ make push
+```
+
+## Add aliases (currently only to ~/.oh-my-zsh/custom/my.zsh)
+
+```
+$ make setup
+```
+
+You can also add aliases manually, see them below.
 
 ## Run commands
 
