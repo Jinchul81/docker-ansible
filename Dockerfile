@@ -28,4 +28,4 @@ ENV PATH /ansible/bin:$PATH
 ENV PYTHONPATH /ansible/lib
 
 # default command: display Ansible version
-CMD [ "ansible-playbook", "--version" ]
+CMD [ "ansible", "--version" ]
