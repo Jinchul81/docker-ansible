@@ -5,7 +5,7 @@ Dockerized Ansible commands
 ## Requirements
 
 - Docker
-- Make
+- Make (on OSX you need Xcode developer tools to get this)
 
 ## Build the image
 
