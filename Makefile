@@ -18,6 +18,8 @@ setup-bash:
 setup-bash: create-aliases
 
 setup-zsh: SHELL_FILE=${HOME}/.oh-my-zsh/custom/my.zsh
+setup-zsh:
+	touch ${HOME}/.oh-my-zsh/custom/my.zsh || exit
 setup-zsh: create-aliases
 
 create-aliases:

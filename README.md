@@ -52,7 +52,7 @@ It's assumed you are using default Druid infra structure where:
 and that your keys are in:
 
 - private key in ~/.ssh/id_rsa
-- public key in ~/.ssh/id_rsa.pub
+- Vagrant insecure private key in ~/.vagrant.d/insecure_private_key
 
 Get version
 
