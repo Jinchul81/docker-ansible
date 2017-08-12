@@ -25,10 +25,18 @@ $ docker build -t druidfi/ansible .
 $ make push
 ```
 
-## Add aliases (currently only to ~/.oh-my-zsh/custom/my.zsh)
+## Add aliases
+
+For the Oh My Zsh shell:
 
 ```
-$ make setup
+$ make setup-zsh
+```
+
+For the default bash shell:
+
+```
+$ make setup-bash
 ```
 
 You can also add aliases manually, see them below.
