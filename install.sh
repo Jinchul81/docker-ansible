@@ -3,6 +3,12 @@ main() {
   # Temporary clone path
   TMP_GIT_CLONE_PATH=/tmp/docker-ansible
 
+  # Check that Docker is installed
+  hash docker >/dev/null 2>&1 || {
+    echo "Error: Docker is not installed"
+    exit 1
+  }
+
   # Check that git is installed
   hash git >/dev/null 2>&1 || {
     echo "Error: git is not installed"

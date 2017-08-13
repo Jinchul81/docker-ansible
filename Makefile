@@ -31,5 +31,5 @@ create-aliases:
 
 install:
 	echo "Create programs to ${INSTALL_PATH}"
-	cp ${CURDIR}/scripts/* ${INSTALL_PATH}
+	cp -rf ${CURDIR}/scripts/* ${INSTALL_PATH}
 	chmod +x ${INSTALL_PATH}/ansible*
