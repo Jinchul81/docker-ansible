@@ -10,6 +10,12 @@ Dockerized Ansible commands
 
 # Install
 
+Oneliner:
+
+```
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/druidfi/docker-ansible/master/install.sh)"
+```
+
 This will add scripts to run docker commands in /usr/local/bin
 
 ```
