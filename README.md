@@ -8,6 +8,14 @@ Dockerized Ansible commands
 - Docker
 - Make (on OSX you need Xcode developer tools to get this)
 
+# Install
+
+This will add scripts to run docker commands in /usr/local/bin
+
+```
+$ make install
+```
+
 ## Add aliases
 
 For the Oh My Zsh shell:
@@ -40,7 +48,7 @@ and that your keys are in:
 ### Get version
 
 ```
-$ docker run --rm -it druidfi/ansible ansible --version
+$ docker run --rm -it druidfi/docker-ansible ansible --version
 ```
 
 ### Install roles

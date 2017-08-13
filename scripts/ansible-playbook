@@ -1,0 +1,6 @@
+#!/bin/bash
+
+CMD=ansible-playbook
+DOCKER_IMAGE=druidfi/docker-ansible
+
+docker run --rm -it -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa:ro -v ${HOME}/.vagrant.d/insecure_private_key:/root/.vagrant.d/insecure_private_key:ro -v $(pwd):/ansible/playbooks ${DOCKER_IMAGE} ${CMD}
