@@ -1,6 +1,8 @@
 # docker-ansible
 
-Dockerized Ansible commands
+Dockerized Ansible commands.
+
+This repo is automatically build to Docker Hub: https://hub.docker.com/r/druidfi/docker-ansible/
 
 ## Requirements
 
@@ -10,19 +12,23 @@ Dockerized Ansible commands
 
 # Install
 
+Installation will add scripts to run docker commands in /usr/local/bin.
+
 Oneliner:
 
 ```
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/druidfi/docker-ansible/master/install.sh)"
 ```
 
-This will add scripts to run docker commands in /usr/local/bin
+Or with the make after cloning this repo:
 
 ```
 $ make install
 ```
 
-## Add aliases
+## If you prefer aliases
+
+Note: e.g. Vagrant will not know about your aliases!
 
 For the Oh My Zsh shell:
 
@@ -38,7 +44,7 @@ $ make setup-bash
 
 You can also add aliases manually, see them below.
 
-## Run commands
+## Docker commands
 
 It's assumed you are using default Druid infra structure where:
 
@@ -100,3 +106,8 @@ or
 ```
 $ docker build -t druidfi/ansible .
 ```
+
+## Tested with
+
+- macOS Sierra
+- Ubuntu 16.04

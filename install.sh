@@ -1,11 +1,14 @@
 main() {
 
+  # Repository
+  REPO=https://github.com/druidfi/docker-ansible.git
+
   # Temporary clone path
   TMP_GIT_CLONE_PATH=/tmp/docker-ansible
 
   # Check that Docker is installed
   hash docker >/dev/null 2>&1 || {
-    echo "Error: Docker is not installed"
+    echo "Error: Docker is not installed. Get if from https://www.docker.com/get-docker"
     exit 1
   }
 
@@ -19,7 +22,7 @@ main() {
   rm -rf $TMP_GIT_CLONE_PATH
 
   # Clone the repository
-  env git clone --depth=1 https://github.com/druidfi/docker-ansible.git $TMP_GIT_CLONE_PATH || {
+  env git clone --depth=1 ${REPO} $TMP_GIT_CLONE_PATH || {
     printf "Error: git clone of druidfi/docker-ansible repo failed\n"
     exit 1
   }
